@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
         val url = "https://meme-api.herokuapp.com/gimme"
 
         // Request a string response from the provided URL.
-        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null, Response.Listener { response ->
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
+            Response.Listener { response ->
             // Display the first 500 characters of the response string.
             currentImageURL = response.getString("url")
             Glide.with(this).load(currentImageURL).listener(object: RequestListener<Drawable>{
